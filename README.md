@@ -8,7 +8,7 @@ My objective is to consolidate my practice with assessment exames into one excer
 
 
 <p> To overview my queries, below is the ERD Diagram  that came along with the database for your review:</p></br>
-<p> This database is fake data used for learning purposes only. The ERD Diagram and database was not designed by me, but can be found in the Udemy "The Complete SQL Bootcamp" Course. 
+<p> This database is fake data used for learning purposes only. The ERD Diagram and database was not designed by me, but can be found in the Udemy "The Complete SQL Bootcamp" course created by Jose Portilla. 
 
 <div align="center">
   <img src="https://github.com/JosefinaAureaAmaro/00_SQL_AdvancedQueries/blob/master/images/ERD_Diagram_of_Database.png">
