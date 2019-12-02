@@ -1,3 +1,5 @@
+<img src="https://github.com/JosefinaAureaAmaro/00_SQL_AdvancedQueries/blob/master/images/adv_queries_repo_header.PNG">
+
 <p> Welcome! 👋 <br/> 
 
 This repo displays my task-oriented advanced sql queries with a decent sized database.
