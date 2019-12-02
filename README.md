@@ -8,6 +8,7 @@ My objective is to consolidate my practice with assessment exames into one excer
 
 
 To overview my queries, below is the ERD Diagram  that came along with the database for your review:</br>
+
 This database is made up of "fake" data used for learning purposes only. The ERD Diagram and database were not designed by me.
 
 <div align="center">
