@@ -2,16 +2,16 @@
 /* These task-oriented assignments are designed by me
 to make the query complex and comprehensive */
 
--- COUNT RENTAL RATE GROUP BY RATING
+-- 1. COUNT RENTAL RATE GROUP BY RATING
 
-SELECT rating, rental_rate, COUNT(rental_rate) AS num_purch_rate -- COLUMNS
-FROM film -- TABLE
-GROUP BY rating, rental_rate -- CATEGORICAL COLUMNS 
-ORDER BY COUNT(rental_rate) DESC; -- ORDER OF DATA
+SELECT rating, rental_rate, COUNT(rental_rate) AS num_purch_rate 
+FROM film 
+GROUP BY rating, rental_rate  
+ORDER BY COUNT(rental_rate) DESC; 
 
 
 
--- GIVE ME ALL THE TITLES OF FILMS IN HORROR
+-- 2. DISPLAY ALL FILM TITLES IN HORROR CATEGORY
 
 -- SUBQUERY VERSION
 SELECT name, title
@@ -30,7 +30,7 @@ JOIN category AS cat ON cat.category_id = fc.category_id
 WHERE name = 'Horror';
 
 
--- COUNT THE NUMBER OF FILMS PER ACTOR BY A GIVEN CATEGORY
+-- 3. COUNT THE NUMBER OF FILMS PER ACTOR BY A GIVEN CATEGORY
 -- (pt 1)
 CREATE VIEW featured_actors
 AS SELECT DISTINCT film_category.film_id, name, first_name, last_name
@@ -46,7 +46,7 @@ SELECT first_name, last_name, COUNT(film_id)
 FROM featured_actors
 GROUP BY first_name, last_name;
 
--- SELECT TOP 25 selling films by Category
+-- 4. SELECT TOP 25 SELLING FILMS BY CATEGORY
 SELECT name,  rating, COUNT(rental_id) AS purchase_freq
 FROM film
 JOIN inventory AS inv ON inv.film_id = film.film_id
@@ -60,8 +60,7 @@ JOIN country ON country.country_id = city.country_id
 WHERE country = 'United States'
 GROUP BY name, rating, release_year;
 
--- GET THE MOST FREQUENT MOVIE WATCHED
-
+-- 5.  GET THE MOST FREQUENT MOVIE WATCHED
 SELECT film.film_id, title, COUNT(rental_id) AS purchase_freq
 FROM film
 JOIN inventory  inv ON inv.film_id = film.film_id
@@ -78,11 +77,16 @@ ORDER BY purchase_freq DESC;
 /* for assessments the query needs to focus on the answer, not the flexibility of data available
 from the query. In a work-place setting, a more dynamic query is preferred */
 
--- WHAT IS THE MOST PROFITABLE FILM (DISPLAY INVENTORY_ID & TOTAL SALES)
+-- 6. WHAT IS THE MOST PROFITABLE FILM (DISPLAY INVENTORY_ID & TOTAL SALES)
 SELECT inventory_id, COUNT(rental.customer_id) total_purchase_freq, SUM(amount) total_sales
 FROM rental
 JOIN payment pay ON pay.customer_id = rental.customer_id
 GROUP BY inventory_id
 ORDER BY total_sales DESC; 
 
+-- 7. SHOW ALL FILMS THAT HAVE "Jedi" IN THE TITLE 
+SELECT title
+FROM film
+WHERE title LIKE '%Jedi%';
 
+/** MORE QUERIES TO COME,  WHICH WILL INCLUDE UNIONS AND CALCULATED FIELDS **/
